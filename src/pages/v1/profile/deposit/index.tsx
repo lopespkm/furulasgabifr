@@ -217,7 +217,7 @@ export default function DepositPage() {
     const amount = parseFloat(customAmount.replace(',', '.'));
     
     if (!amount || amount < 1) {
-      toast.error('Por favor, insira um valor válido (mínimo R$ 1,00)');
+      toast.error('Por favor, insira um valor válido (mínimo R$ 10,00)');
       return;
     }
 
@@ -334,7 +334,7 @@ export default function DepositPage() {
                   />
                 </div>
                 <p className="text-neutral-500 text-sm">
-                  Valor mínimo: R$ 1,00
+                  Valor mínimo: R$ 10,00
                 </p>
               </div>
             </div>
