@@ -1,24 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'api.raspetudo.online',
-        port: '',
-        pathname: '/uploads/**',
-      },
-      // Supabase CDN
-      {
-        protocol: 'https',
-        hostname: '**.supabase.co',
-        port: '',
-        pathname: '/storage/v1/object/public/**',
-      }
-    ],
+    unoptimized: true, // Permite imagens de qualquer domínio
   },
 };
 
