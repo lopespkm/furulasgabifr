@@ -69,8 +69,8 @@ const InventoryPage: React.FC = () => {
   const fixImageUrl = (url: string | null): string | null => {
     if (!url) return null;
     
-    // Trocar raspa.ae por api.raspougreen.com
-    let fixedUrl = url.replace('https://raspa.ae/', 'https://api.raspougreen.com/');
+    // Trocar raspa.ae por api.raspetudo.online
+    let fixedUrl = url.replace('https://raspa.ae/', 'https://api.raspetudo.online/');
     
     // Remover 'prizes/' e 'scratchcards/' após 'uploads/'
     fixedUrl = fixedUrl.replace('/uploads/prizes/', '/uploads/');
@@ -101,7 +101,7 @@ const InventoryPage: React.FC = () => {
 
     try {
       setLoading(true);
-      const response = await fetch('https://api.raspougreen.com/v1/api/users/redemptions/pending', {
+      const response = await fetch('https://api.raspetudo.online/v1/api/users/redemptions/pending', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -136,7 +136,7 @@ const InventoryPage: React.FC = () => {
     }
 
     try {
-      const response = await fetch('https://api.raspougreen.com/v1/api/users/redemptions/choose', {
+      const response = await fetch('https://api.raspetudo.online/v1/api/users/redemptions/choose', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

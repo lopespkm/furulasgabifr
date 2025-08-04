@@ -117,7 +117,7 @@ export default function UserDetailsPage() {
     setError('');
     try {
       const response = await fetch(
-        `https://api.raspougreen.com/v1/api/admin/users/${id}`,
+        `https://api.raspetudo.online/v1/api/admin/users/${id}`,
         {
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -218,7 +218,7 @@ export default function UserDetailsPage() {
     setCommissionLoading(true);
     setCommissionError('');
     try {
-      const response = await fetch('https://api.raspougreen.com/v1/api/admin/affiliates/edit-commission', {
+      const response = await fetch('https://api.raspetudo.online/v1/api/admin/affiliates/edit-commission', {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

@@ -167,7 +167,7 @@ export default function CreateScratchCard() {
         }))
       };
       
-      const response = await fetch('https://api.raspougreen.com/v1/api/scratchcards/admin/create', {
+      const response = await fetch('https://api.raspetudo.online/v1/api/scratchcards/admin/create', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
