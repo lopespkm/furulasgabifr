@@ -26,6 +26,8 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300","400","500", "600", "700"],
 });
+import { apiUrl } from '@/lib/api';
+
 
 interface QuickAmountProps {
   amount: number;
@@ -217,7 +219,7 @@ export default function DepositPage() {
     const amount = parseFloat(customAmount.replace(',', '.'));
     
     if (!amount || amount < 1) {
-      toast.error('Por favor, insira um valor válido (mínimo R$ 10,00)');
+      toast.error('Por favor, insira um valor válido (mínimo R$ 1,00)');
       return;
     }
 
@@ -229,7 +231,7 @@ export default function DepositPage() {
     setIsGeneratingPayment(true);
     
     try {
-      const response = await fetch('https://api.raspetudo.online/v1/api/deposits/create', {
+      const response = await fetch(apiUrl('/v1/api/deposits/create'), {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -334,7 +336,7 @@ export default function DepositPage() {
                   />
                 </div>
                 <p className="text-neutral-500 text-sm">
-                  Valor mínimo: R$ 10,00
+                  Valor mínimo: R$ 1,00
                 </p>
               </div>
             </div>
